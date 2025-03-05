@@ -51,6 +51,7 @@ h1 {
 }
 
 .post-card {
+  margin-bottom: 20px;
   cursor: pointer;
   border: 1px solid #000;
   border-radius: 10px;
@@ -62,7 +63,7 @@ h1 {
   }
 
   .text {
-    width: calc(100% - 100px);
+    width: calc(100% - 30px);
   }
   .title {
     font-size: 28px;
@@ -70,16 +71,12 @@ h1 {
     line-height: 48px;
     color: #3a6ecf;
     width: 100%;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
+    word-break: break-all;
   }
 
   .content {
     width: 100%;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
+    word-break: break-all;
     font-size: 18px;
     line-height: 28px;
     font-weight: 400;
@@ -138,9 +135,15 @@ h1 {
   top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
-
+  //   opacity: 0;
+  //   visibility: hidden;
   padding: 20px;
 }
+
+// .show-modal {
+//   opacity: 1;
+//   visibility: visible;
+// }
 
 .modal-inner {
   width: 100%;
