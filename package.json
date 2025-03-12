@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://yuri1114.github.io/my-memo/",
+
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
