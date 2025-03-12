@@ -42,17 +42,16 @@ function App() {
   }
 
   // 필터링 로직
-  const filteredPosts = posts.sort((a, b) => {
+  const filteredPosts = [...posts].sort((a, b) => {
     if (filter === "title") {
-      return a.title.localeCompare(b.title); // 제목 순으로 정렬
+      return a.title.localeCompare(b.title);
     } else if (filter === "date") {
-      return new Date(b.date).getTime() - new Date(a.date).getTime(); // 날짜와 시간 포함하여 내림차순 정렬
+      return new Date(b.date).getTime() - new Date(a.date).getTime();
     } else if (filter === "star") {
-      // star가 true인 글을 위로, false인 글을 아래로
       if (a.star === b.star) {
-        return new Date(b.date).getTime() - new Date(a.date).getTime(); // star가 같으면 날짜로 정렬
+        return new Date(b.date).getTime() - new Date(a.date).getTime();
       }
-      return a.star ? -1 : 1; // star가 true인 글을 위로
+      return a.star ? -1 : 1;
     }
     return 0;
   });
@@ -98,7 +97,7 @@ function App() {
         {posts.length === 0 ? (
           <p className="empty">글 내용이 없습니다. </p>
         ) : (
-          posts?.map((post, index) => (
+          filteredPosts.map((post, index) => (
             <PostCard
               key={index}
               post={post}
